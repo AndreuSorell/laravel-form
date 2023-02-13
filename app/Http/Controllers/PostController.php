@@ -83,7 +83,7 @@ class PostController extends Controller
         $post = Post::query()->where('id', '=', $id)->first();
 
         if (!Gate::allows('update-post', $post)) {
-            echo "<script>alert('You are not the owner of the post.')</script>";
+            echo "<script>alert('¡Lo siento, no eres el propietario del post!')</script>";
             return $this->index();
         }
 
@@ -125,9 +125,9 @@ class PostController extends Controller
         try {
 
             $post = Post::query()->where('id', '=', $id)->first();
-            
+
             if (!Gate::allows('delete-post', $post)) {
-                echo "<script>alert('You are not the owner of the post.')</script>";
+                echo "<script>alert('¡Lo siento, no eres el propietario del post!')</script>";
                 return $this->index();
             }
 

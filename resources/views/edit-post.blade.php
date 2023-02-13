@@ -52,7 +52,7 @@
 
         <!-- CHECKS -->
         <fieldset class="regular-fieldset">
-            <label for="expirable">{{ __('expirable') }}</label>
+            <label for="expirable">{{ __('caducable') }}</label>
             <input type="checkbox" id="expirable" name="expirable" @checked(old('expirable', $post->expirable))>
             <label for="comentable">{{ __('comentable') }}</label>
             <input type="checkbox" id="comentable" name="comentable" @checked(old('comentable', $post->comentable))><br>

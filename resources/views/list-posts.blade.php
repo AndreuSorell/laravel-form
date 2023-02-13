@@ -10,20 +10,23 @@
 
 <body>
     @include('components.navbar')
-    <h3>Total number of posts: {{ $posts->count() }}</h3>
+    <h3>Posts totales: {{ $posts->count() }}</h3>
 
     @foreach ($posts as $post)
-        <p>Post title: {{ $post->title }}</p>
-        <p>Post author: {{$post->name}}</p>
-        <form id="edit-post" method="GET" action="{{ route('posts.edit', $post->id) }}">
-            <input style="width: 50px; height: 30px;" type="submit" value="🖋">
+        <div style="border: 2px solid black; padding: 10px;">
+        <b><p >Título: {{ $post->title }}</p></b>
+        <p>Autor: {{$post->name}}</p>
+        <form id="edit-post" style="display: inline-block; margin-right: 10px;" method="GET" action="{{ route('posts.edit', $post->id) }}">
+            <input style="width: 50px; height: 30px;" type="submit" value="Editar">
             @csrf
-        </form>
-        <br>
-        <form id="delete-post" method="POST" action="{{ route('posts.destroy', $post->id) }}">
-            <input style="width: 50px; height: 30px;" type="submit" value="🗑">
+        </form> 
+        <form id="delete-post" style="display: inline-block; margin-right: 10px;" method="POST" action="{{ route('posts.destroy', $post->id) }}">
+            <input style="width: 50px; height: 30px;" type="submit" value="Borrar">
             @csrf @method('DELETE')
         </form>
+        </div>
+        <br>
+        <br>
     @endforeach
 
 </body>

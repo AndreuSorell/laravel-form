@@ -2,14 +2,14 @@
 <style>
     /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: white;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: right;
-  color: #f2f2f2;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -24,13 +24,13 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: white;
+  color: black;
 }
 </style>
 
 <div class="topnav">
-    <a href="{{ route('dashboard') }}">Dashboard</a>
-    <a href="{{ route('posts.index') }}">List posts</a>
-    <a class="active" href="{{ route('posts.create') }}">Create post</a>
+  <a class="active" href="{{ route('posts.create') }}">Crear</a>
+  <a href="{{ route('posts.index') }}">Posts</a>
+    <a href="{{ route('dashboard') }}">Inicio</a>
   </div>
